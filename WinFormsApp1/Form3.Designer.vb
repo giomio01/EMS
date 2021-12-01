@@ -39,6 +39,7 @@ Partial Class Form3
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -196,12 +197,22 @@ Partial Class Form3
         Me.Button6.Text = "LOGOUT"
         Me.Button6.UseVisualStyleBackColor = False
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(373, 309)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 17
+        Me.Button7.Text = "Button7"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(652, 363)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -243,4 +254,5 @@ Partial Class Form3
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
 End Class
