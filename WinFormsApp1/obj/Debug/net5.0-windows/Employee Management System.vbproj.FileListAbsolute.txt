@@ -1,0 +1,35 @@
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Employee Management System.exe
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Employee Management System.deps.json
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Employee Management System.runtimeconfig.json
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Employee Management System.runtimeconfig.dev.json
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Employee Management System.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\ref\Employee Management System.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Employee Management System.pdb
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Debug\net5.0-windows\MySqlConnector.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.vbproj.AssemblyReference.cache
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.add.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.editdelete.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Form1.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Form2.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Form3.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Resources.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.newadmin.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.vbproj.GenerateResource.cache
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.AssemblyInfoInputs.cache
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.AssemblyInfo.vb
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.vbproj.CoreCompileInputs.cache
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\ref\Employee Management System.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.pdb
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\Employee Management System.genruntimeconfig.cache
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.approver.resources
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Form4.resources
