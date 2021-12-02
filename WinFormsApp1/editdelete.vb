@@ -92,6 +92,10 @@ Public Class editdelete
             TextBox6.Enabled = False
             Button2.Enabled = True
             Button3.Enabled = False
+            If TextBox1.Text = "Unavailable" Then
+                TextBox1.Enabled = False
+                MessageBox.Show("This Employee doesn't have an email if you wish to add an email address on this account DELETE this account first then ADD a new one to generate email ID or you can edit existing details only")
+            End If
 
 
         Else
@@ -175,6 +179,8 @@ Public Class editdelete
             If command2.ExecuteNonQuery() = 1 Then
                 MessageBox.Show("email succesfully updated")
 
+            ElseIf command2.ExecuteNonQuery() = 0 Then
+                MessageBox.Show("no email added")
             Else
                 MessageBox.Show("Error")
             End If
@@ -197,113 +203,110 @@ Public Class editdelete
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         connection = New MySqlConnection
         connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
-
-        Dim query As String
-        Dim query1 As String
-        Dim query2 As String
-
-
-
-
-        query = "delete from `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "'"
-        query1 = "delete from `emails` WHERE `id` = (SELECT `email_id` FROM `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "')"
-        query2 = "delete from `approvers` WHERE `emails_id` = (SELECT `email_id` FROM `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "')"
-
-
-        command = New MySqlCommand(query, connection)
-        command2 = New MySqlCommand(query1, connection)
-        command3 = New MySqlCommand(query2, connection)
-
-
-
-
-        connection.Open()
-        Dim rslt As New System.Windows.Forms.DialogResult
-        rslt = MessageBox.Show("Are you sure you want to delete this information?", "WARNING!", MessageBoxButtons.YesNo)
-        If rslt = Windows.Forms.DialogResult.Yes Then
-
-            If ComboBox1.Text = "Choose One" Then
-                MessageBox.Show("Please choose Designation")
-            ElseIf ComboBox1.Text = "Equipment Engineering" Then
-                Dim query3 As String
-                query3 = "delete from `auth_ee` WHERE `approvers_id` = '" & TextBox9.Text & "'"
-                command4 = New MySqlCommand(query3, connection)
-                If command4.ExecuteNonQuery() = 1 Then
-                    MessageBox.Show("Approver DELETED!")
-                End If
-            ElseIf ComboBox1.Text = "Process Engineering" Then
-                Dim query3 As String
-                query3 = "delete from `auth_pe` WHERE `approvers_id` = '" & TextBox9.Text & "'"
-                command4 = New MySqlCommand(query3, connection)
-                If command4.ExecuteNonQuery() = 1 Then
-                    MessageBox.Show("Approver DELETED!")
-                End If
-            ElseIf ComboBox1.Text = "Quality Assurance" Then
-                Dim query3 As String
-                query3 = "delete from `auth_qa` WHERE `approvers_id` = '" & TextBox9.Text & "'"
-                command4 = New MySqlCommand(query3, connection)
-                If command4.ExecuteNonQuery() = 1 Then
-                    MessageBox.Show("Approver DELETED!")
-                End If
-            ElseIf ComboBox1.Text = "Production" Then
-                Dim query3 As String
-                query3 = "delete from `auth_prod` WHERE `approvers_id` = '" & TextBox9.Text & "'"
-                command4 = New MySqlCommand(query3, connection)
-                If command4.ExecuteNonQuery() = 1 Then
-                    MessageBox.Show("Approver DELETED!")
-                End If
-            ElseIf ComboBox1.Text = "Other" Then
-                Dim query3 As String
-                query3 = "delete from `auth_others` WHERE `approvers_id` = '" & TextBox9.Text & "'"
-                command4 = New MySqlCommand(query3, connection)
-                If command4.ExecuteNonQuery() = 1 Then
-                    MessageBox.Show("Approver DELETED!")
-                End If
-            End If
-
-            If command3.ExecuteNonQuery() = 1 Then
-
-                MessageBox.Show("Approver DELETED!")
-
-
-            Else
-                MessageBox.Show("Not an approver!")
-            End If
-
-            If command2.ExecuteNonQuery() = 1 Then
-
-                MessageBox.Show("EMAIL DELETED!")
-
-
-            Else
-                MessageBox.Show("Error")
-            End If
-
-            If command.ExecuteNonQuery() = 1 Then
-
-                MessageBox.Show("DATA DELETED!")
-
-
-            Else
-                MessageBox.Show("Error")
-            End If
-
-
+        If TextBox6.Text = "" Then
+            MessageBox.Show("please input employee number")
         Else
+            Dim query As String
+            Dim query1 As String
+            Dim query2 As String
 
+
+
+
+            query = "delete from `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "'"
+            query1 = "delete from `emails` WHERE `id` = (SELECT `email_id` FROM `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "')"
+            query2 = "delete from `approvers` WHERE `emails_id` = (SELECT `email_id` FROM `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "')"
+
+
+            command = New MySqlCommand(query, connection)
+            command2 = New MySqlCommand(query1, connection)
+            command3 = New MySqlCommand(query2, connection)
+
+
+
+
+            connection.Open()
+            Dim rslt As New System.Windows.Forms.DialogResult
+            rslt = MessageBox.Show("Are you sure you want to delete this information?", "WARNING!", MessageBoxButtons.YesNo)
+            If rslt = Windows.Forms.DialogResult.Yes Then
+
+                If ComboBox1.Text = "Choose One" Then
+                    MessageBox.Show("Please choose Designation")
+                ElseIf ComboBox1.Text = "Equipment Engineering" Then
+                    Dim query3 As String
+                    query3 = "delete from `auth_ee` WHERE `approvers_id` = '" & TextBox9.Text & "'"
+                    command4 = New MySqlCommand(query3, connection)
+                    If command4.ExecuteNonQuery() = 1 Then
+                    End If
+                ElseIf ComboBox1.Text = "Process Engineering" Then
+                    Dim query3 As String
+                    query3 = "delete from `auth_pe` WHERE `approvers_id` = '" & TextBox9.Text & "'"
+                    command4 = New MySqlCommand(query3, connection)
+                    If command4.ExecuteNonQuery() = 1 Then
+                    End If
+                ElseIf ComboBox1.Text = "Quality Assurance" Then
+                    Dim query3 As String
+                    query3 = "delete from `auth_qa` WHERE `approvers_id` = '" & TextBox9.Text & "'"
+                    command4 = New MySqlCommand(query3, connection)
+                    If command4.ExecuteNonQuery() = 1 Then
+                    End If
+                ElseIf ComboBox1.Text = "Production" Then
+                    Dim query3 As String
+                    query3 = "delete from `auth_prod` WHERE `approvers_id` = '" & TextBox9.Text & "'"
+                    command4 = New MySqlCommand(query3, connection)
+                    If command4.ExecuteNonQuery() = 1 Then
+                    End If
+                ElseIf ComboBox1.Text = "Other" Then
+                    Dim query3 As String
+                    query3 = "delete from `auth_others` WHERE `approvers_id` = '" & TextBox9.Text & "'"
+                    command4 = New MySqlCommand(query3, connection)
+                    If command4.ExecuteNonQuery() = 1 Then
+
+                    End If
+                End If
+
+                If command3.ExecuteNonQuery() = 1 Then
+
+
+                Else
+                    MessageBox.Show("Not an approver!")
+                End If
+
+                If command2.ExecuteNonQuery() = 1 Then
+
+
+
+
+                Else
+                    MessageBox.Show("Error")
+                End If
+
+                If command.ExecuteNonQuery() = 1 Then
+
+                    MessageBox.Show("DATA DELETED!")
+
+
+                Else
+                    MessageBox.Show("Error")
+                End If
+
+
+            Else
+
+            End If
+
+
+            TextBox7.Text = ""
+            TextBox2.Text = ""
+            TextBox3.Text = ""
+            TextBox4.Text = ""
+            TextBox5.Text = ""
+            TextBox8.Text = ""
+            TextBox9.Text = ""
+            ComboBox1.Text = ""
+
+            connection.Close()
         End If
-
-
-        TextBox7.Text = ""
-        TextBox2.Text = ""
-        TextBox3.Text = ""
-        TextBox4.Text = ""
-        TextBox5.Text = ""
-        TextBox8.Text = ""
-        TextBox9.Text = ""
-        ComboBox1.Text = ""
-
-        connection.Close()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -317,4 +320,15 @@ Public Class editdelete
         End If
     End Sub
 
+
+    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+
+
+
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+
+            e.Handled = True
+        End If
+
+    End Sub
 End Class

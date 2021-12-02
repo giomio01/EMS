@@ -30,6 +30,7 @@ Partial Class Form4
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -61,7 +62,7 @@ Partial Class Form4
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(404, 107)
+        Me.TextBox2.Location = New System.Drawing.Point(420, 146)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(116, 23)
         Me.TextBox2.TabIndex = 3
@@ -70,7 +71,7 @@ Partial Class Form4
         '
         Me.Button2.BackColor = System.Drawing.Color.CadetBlue
         Me.Button2.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(541, 106)
+        Me.Button2.Location = New System.Drawing.Point(541, 147)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
@@ -81,7 +82,7 @@ Partial Class Form4
         '
         Me.Button3.BackColor = System.Drawing.Color.CadetBlue
         Me.Button3.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button3.Location = New System.Drawing.Point(541, 152)
+        Me.Button3.Location = New System.Drawing.Point(541, 193)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 5
@@ -92,7 +93,7 @@ Partial Class Form4
         '
         Me.Button4.BackColor = System.Drawing.Color.CadetBlue
         Me.Button4.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button4.Location = New System.Drawing.Point(541, 200)
+        Me.Button4.Location = New System.Drawing.Point(541, 241)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 6
@@ -109,12 +110,23 @@ Partial Class Form4
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "ADD Authorized Person"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(395, 124)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(174, 15)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "INSERT EMPLOYEE NUMBER:"
+        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(630, 316)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -139,4 +151,5 @@ Partial Class Form4
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -20,7 +20,7 @@ Public Class Form1
         Try
             connection.Open()
             Dim query As String
-            query = "SELECT * from log_in where User ='" & TextBox1.Text & "' and Pass = '" & TextBox2.Text & "' "
+            query = "SELECT * from log_in where BINARY User ='" & TextBox1.Text & "' and BINARY Pass = '" & TextBox2.Text & "' "
             command = New MySqlCommand(query, connection)
             reader = command.ExecuteReader
             Dim count As Integer

@@ -15,6 +15,9 @@ Public Class add
 
     Private Sub add_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+        TextBox7.Enabled = False
+        ComboBox1.Enabled = False
+
 
     End Sub
 
@@ -178,5 +181,29 @@ Public Class add
         End If
 
     End Sub
+    Private Sub TextBox6_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox6.KeyPress
 
+
+
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            TextBox7.Enabled = True
+            ComboBox1.Enabled = True
+            ComboBox1.Text = "Choose One"
+
+        Else
+            TextBox7.Enabled = False
+            ComboBox1.Enabled = False
+            ComboBox1.Text = "Unavailable"
+
+
+        End If
+    End Sub
 End Class

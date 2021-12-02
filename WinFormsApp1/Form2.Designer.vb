@@ -37,7 +37,7 @@ Partial Class Form2
         Me.Button1.BackColor = System.Drawing.Color.CadetBlue
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.Location = New System.Drawing.Point(14, 46)
+        Me.Button1.Location = New System.Drawing.Point(12, 28)
         Me.Button1.Name = "Button1"
         Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Button1.Size = New System.Drawing.Size(159, 95)
@@ -49,7 +49,7 @@ Partial Class Form2
         '
         Me.Button2.BackColor = System.Drawing.Color.CadetBlue
         Me.Button2.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button2.Location = New System.Drawing.Point(14, 157)
+        Me.Button2.Location = New System.Drawing.Point(12, 129)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(159, 91)
         Me.Button2.TabIndex = 1
@@ -60,7 +60,7 @@ Partial Class Form2
         '
         Me.Button5.BackColor = System.Drawing.Color.CadetBlue
         Me.Button5.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button5.Location = New System.Drawing.Point(14, 271)
+        Me.Button5.Location = New System.Drawing.Point(12, 226)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(159, 91)
         Me.Button5.TabIndex = 2
@@ -92,7 +92,7 @@ Partial Class Form2
         '
         Me.Button7.BackColor = System.Drawing.Color.CadetBlue
         Me.Button7.Font = New System.Drawing.Font("Showcard Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button7.Location = New System.Drawing.Point(296, 229)
+        Me.Button7.Location = New System.Drawing.Point(12, 323)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(159, 91)
         Me.Button7.TabIndex = 5

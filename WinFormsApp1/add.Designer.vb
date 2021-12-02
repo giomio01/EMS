@@ -45,6 +45,7 @@ Partial Class add
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -194,6 +195,7 @@ Partial Class add
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(214, 23)
         Me.TextBox7.TabIndex = 15
+        Me.TextBox7.Text = "Unavailable"
         '
         'Label7
         '
@@ -224,7 +226,7 @@ Partial Class add
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 25)
         Me.ComboBox1.TabIndex = 25
-        Me.ComboBox1.Text = "choose one"
+        Me.ComboBox1.Text = "Unavailable"
         '
         'Label10
         '
@@ -256,12 +258,23 @@ Partial Class add
         Me.Label11.TabIndex = 29
         Me.Label11.Text = "EMAIL ID:"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(717, 234)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(86, 18)
+        Me.CheckBox1.TabIndex = 30
+        Me.CheckBox1.Text = "AVAILABLE"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(802, 415)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label10)
@@ -315,4 +328,5 @@ Partial Class add
     Friend WithEvents Label10 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Label11 As Label
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

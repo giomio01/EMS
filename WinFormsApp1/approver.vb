@@ -108,11 +108,20 @@ Public Class approver
 
             End If
         End If
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Hide()
-        add.Show()
+        Dim rslt As New System.Windows.Forms.DialogResult
+        rslt = MessageBox.Show("Are you sure you want to exit?", "WARNING!", MessageBoxButtons.YesNo)
+        If rslt = Windows.Forms.DialogResult.Yes Then
+            Me.Hide()
+            add.Show()
+        Else
+            Exit Sub
+        End If
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
