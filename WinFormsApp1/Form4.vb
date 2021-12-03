@@ -260,4 +260,15 @@ WHERE
         End If
 
     End Sub
+
+    Private Sub TextBox2_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox2.KeyPress
+
+
+
+        If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+
+            e.Handled = True
+        End If
+
+    End Sub
 End Class

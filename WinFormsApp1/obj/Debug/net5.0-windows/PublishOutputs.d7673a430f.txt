@@ -1,0 +1,14 @@
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Employee Management System.exe
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Employee Management System.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Employee Management System.deps.json
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Employee Management System.runtimeconfig.json
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Employee Management System.pdb
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\BouncyCastle.Crypto.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Google.Protobuf.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\K4os.Compression.LZ4.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\K4os.Compression.LZ4.Streams.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\K4os.Hash.xxHash.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\MySql.Data.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\Ubiety.Dns.Core.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\ZstdNet.dll
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\publish\MySqlConnector.dll

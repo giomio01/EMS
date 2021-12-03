@@ -34,62 +34,61 @@ Public Class add
             MessageBox.Show("please input employee's Station")
         ElseIf TextBox5.Text = "" Then
             MessageBox.Show("please input employee's Productline")
+        ElseIf TextBox7.Text <> "Unavailable" And Label10.Text = "NO ID GENERATED" Or Label10.Text = "" Then
+            MessageBox.Show("please finish email id generation")
+        ElseIf TextBox7.Text = "Unavailable" And combobox1.Text = "Choose One" Or Label10.Text = "" Then
+            MessageBox.Show("please finish email id generation")
+        ElseIf TextBox7.Text = "" Then
+            MessageBox.Show("please input employee's email")
         Else
             connection = New MySqlConnection
             connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
 
             Dim query As String
-            Dim query1 As String
-            Dim query2 As String
-            Dim query3 As String
             query = ("Insert into `emp_masterlist`(`EMP_NO` , `EMP_NAME` , `TEAM` , `DEPARTMENT` , `STATION` , `PRODUCT_LINE` , `emp_email` , `email_id` , `designation`) 
                                         VALUES ('" & TextBox6.Text & "', '" & TextBox1.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "', '" & TextBox4.Text & "', '" & TextBox5.Text & "', '" & TextBox7.Text & "',  '" & Label10.Text & "', '" & ComboBox1.Text & "')")
-            query1 = ("Insert into `emails`(`emailscol`) VALUES ('" & TextBox7.Text & "')")
-            query2 = ("select * from `emails` where `emailscol` = '" & TextBox7.Text & "'")
-            query3 = "UPDATE `emp_masterlist`
-                     SET `EMP_NAME` = '" & TextBox1.Text & "' , `TEAM` = '" & TextBox2.Text & "', `DEPARTMENT` = '" & TextBox3.Text & "'
-                     , `STATION` = '" & TextBox4.Text & "', `PRODUCT_LINE` = '" & TextBox5.Text & "'
-                     , `emp_email` = '" & TextBox7.Text & "' , `email_id` = '' , `designation` = '" & ComboBox1.Text & "'
-                     WHERE `EMP_NO` = '" & TextBox6.Text & "'"
+
             command = New MySqlCommand(query, connection)
-            command1 = New MySqlCommand(query1, connection)
-            command2 = New MySqlCommand(query2, connection)
-            command3 = New MySqlCommand(query3, connection)
 
 
             connection.Open()
             command.ExecuteReader()
             MessageBox.Show("employee succesfully added")
             connection.Close()
+            If Label10.Text = "NO ID GENERATED" Or Label10.Text = "" Then
 
-            Dim rslt As New System.Windows.Forms.DialogResult
-            rslt = MessageBox.Show("Is this employee an approver?", "WARNING!", MessageBoxButtons.YesNo)
-            If rslt = Windows.Forms.DialogResult.Yes Then
-                Me.Hide()
-                approver.Show()
             Else
+                Dim rslt As New System.Windows.Forms.DialogResult
+                rslt = MessageBox.Show("Is this employee an approver?", "WARNING!", MessageBoxButtons.YesNo)
+                If rslt = Windows.Forms.DialogResult.Yes Then
+                    Me.Hide()
+                    approver.Show()
+                Else
+                    TextBox6.Text = ""
+                    TextBox1.Text = ""
+                    TextBox2.Text = ""
+                    TextBox3.Text = ""
+                    TextBox4.Text = ""
+                    TextBox5.Text = ""
+                    TextBox7.Text = "Unavailable"
+                    Label10.Text = "NO ID GENERATED"
+                    ComboBox1.Text = "Unavailable"
+
+                    Exit Sub
+                End If
+
                 TextBox6.Text = ""
                 TextBox1.Text = ""
                 TextBox2.Text = ""
                 TextBox3.Text = ""
                 TextBox4.Text = ""
                 TextBox5.Text = ""
-                TextBox7.Text = ""
-                Label10.Text = ""
+                TextBox7.Text = "Unavailable"
+                Label10.Text = "NO ID GENERATED"
+                ComboBox1.Text = "Unavailable"
 
-                Exit Sub
+
             End If
-
-            TextBox6.Text = ""
-            TextBox1.Text = ""
-            TextBox2.Text = ""
-            TextBox3.Text = ""
-            TextBox4.Text = ""
-            TextBox5.Text = ""
-            TextBox7.Text = ""
-            Label10.Text = ""
-
-
         End If
 
 
@@ -100,6 +99,14 @@ Public Class add
             Dim rslt As New System.Windows.Forms.DialogResult
             rslt = MessageBox.Show("Are you sure you want to exit?", "WARNING!", MessageBoxButtons.YesNo)
             If rslt = Windows.Forms.DialogResult.Yes Then
+                TextBox6.Text = ""
+                TextBox1.Text = ""
+                TextBox2.Text = ""
+                TextBox3.Text = ""
+                TextBox4.Text = ""
+                TextBox5.Text = ""
+                TextBox7.Text = ""
+                Label10.Text = ""
                 Me.Hide()
                 Form2.Show()
             Else
@@ -109,6 +116,14 @@ Public Class add
             Dim rslt As New System.Windows.Forms.DialogResult
             rslt = MessageBox.Show("Are you sure you want to exit?", "WARNING!", MessageBoxButtons.YesNo)
             If rslt = Windows.Forms.DialogResult.Yes Then
+                TextBox6.Text = ""
+                TextBox1.Text = ""
+                TextBox2.Text = ""
+                TextBox3.Text = ""
+                TextBox4.Text = ""
+                TextBox5.Text = ""
+                TextBox7.Text = ""
+                Label10.Text = ""
                 Me.Hide()
                 Form2.Show()
             Else
@@ -117,6 +132,7 @@ Public Class add
         Else
             MessageBox.Show("You have to add the employee because email ID is already generated")
         End If
+
     End Sub
 
 
@@ -127,33 +143,21 @@ Public Class add
 
         If TextBox7.Text = "" Then
             MessageBox.Show("please input email address")
+        ElseIf TextBox7.Text = "Unavailable" Then
+            MessageBox.Show("no email address inputed")
+        ElseIf combobox1.Text = "Choose One" Then
+            MessageBox.Show("no designation inputed")
         Else
             connection = New MySqlConnection
             connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
 
 
 
-            Dim query As String
             Dim query1 As String
             Dim query2 As String
-            Dim query3 As String
-            query = ("Insert into `emp_masterlist`(`EMP_NO` , `EMP_NAME` , `TEAM` , `DEPARTMENT` , `STATION` , `PRODUCT_LINE` , `emp_email` , `email_id` , `designation`) 
-                                        VALUES ('" & TextBox6.Text & "', '" & TextBox1.Text & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "', '" & TextBox4.Text & "', '" & TextBox5.Text & "', '" & TextBox7.Text & "',  '""', '" & ComboBox1.Text & "')")
             query1 = ("Insert into `emails`(`emailscol`) VALUES ('" & TextBox7.Text & "')")
             query2 = ("select * from `emails` where `emailscol` = '" & TextBox7.Text & "'")
-            query3 = "UPDATE `emp_masterlist`
-                     SET `EMP_NAME` = '" & TextBox1.Text & "' , `TEAM` = '" & TextBox2.Text & "', `DEPARTMENT` = '" & TextBox3.Text & "'
-                     , `STATION` = '" & TextBox4.Text & "', `PRODUCT_LINE` = '" & TextBox5.Text & "'
-                     , `emp_email` = '" & TextBox7.Text & "' , `email_id` = '' , `designation` = '" & ComboBox1.Text & "'
-                     WHERE `EMP_NO` = '" & TextBox6.Text & "'"
-            command = New MySqlCommand(query, connection)
-            command1 = New MySqlCommand(query1, connection)
             command2 = New MySqlCommand(query2, connection)
-            command3 = New MySqlCommand(query3, connection)
-
-
-
-
             command1 = New MySqlCommand(query1, connection)
             connection.Open()
             command1.ExecuteReader()
@@ -205,5 +209,9 @@ Public Class add
 
 
         End If
+    End Sub
+
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+
     End Sub
 End Class

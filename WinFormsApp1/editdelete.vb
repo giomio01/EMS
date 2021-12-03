@@ -92,6 +92,7 @@ Public Class editdelete
             TextBox6.Enabled = False
             Button2.Enabled = True
             Button3.Enabled = False
+            Button1.Enabled = False
             If TextBox1.Text = "Unavailable" Then
                 TextBox1.Enabled = False
                 MessageBox.Show("This Employee doesn't have an email if you wish to add an email address on this account DELETE this account first then ADD a new one to generate email ID or you can edit existing details only")
@@ -109,6 +110,7 @@ Public Class editdelete
             TextBox6.Enabled = True
             Button2.Enabled = False
             Button3.Enabled = True
+            Button1.Enabled = True
 
 
         End If
@@ -205,6 +207,9 @@ Public Class editdelete
         connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
         If TextBox6.Text = "" Then
             MessageBox.Show("please input employee number")
+        ElseIf TextBox7.Text = "" Then
+            MessageBox.Show("please click search button")
+
         Else
             Dim query As String
             Dim query1 As String
@@ -231,7 +236,6 @@ Public Class editdelete
             If rslt = Windows.Forms.DialogResult.Yes Then
 
                 If ComboBox1.Text = "Choose One" Then
-                    MessageBox.Show("Please choose Designation")
                 ElseIf ComboBox1.Text = "Equipment Engineering" Then
                     Dim query3 As String
                     query3 = "delete from `auth_ee` WHERE `approvers_id` = '" & TextBox9.Text & "'"
@@ -266,25 +270,15 @@ Public Class editdelete
                 End If
 
                 If command3.ExecuteNonQuery() = 1 Then
-
-
-                Else
                     MessageBox.Show("Not an approver!")
                 End If
 
                 If command2.ExecuteNonQuery() = 1 Then
-
-
-
-
-                Else
-                    MessageBox.Show("Error")
                 End If
 
                 If command.ExecuteNonQuery() = 1 Then
 
                     MessageBox.Show("DATA DELETED!")
-
 
                 Else
                     MessageBox.Show("Error")
@@ -298,6 +292,8 @@ Public Class editdelete
 
             TextBox7.Text = ""
             TextBox2.Text = ""
+            TextBox1.Text = ""
+            TextBox6.Text = ""
             TextBox3.Text = ""
             TextBox4.Text = ""
             TextBox5.Text = ""
@@ -315,13 +311,24 @@ Public Class editdelete
         If rslt = Windows.Forms.DialogResult.Yes Then
             Me.Hide()
             Form2.Show()
+            TextBox7.Text = ""
+            TextBox6.Text = ""
+            TextBox2.Text = ""
+            TextBox3.Text = ""
+            TextBox4.Text = ""
+            TextBox5.Text = ""
+            TextBox7.Text = ""
+            TextBox1.Text = ""
+            ComboBox1.Text = ""
+            TextBox8.Text = ""
+            TextBox9.Text = ""
         Else
 
         End If
     End Sub
 
 
-    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+    Private Sub TextBox6_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox6.KeyPress
 
 
 
