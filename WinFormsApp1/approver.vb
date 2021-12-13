@@ -7,10 +7,17 @@ Public Class approver
     Dim command As MySqlCommand
     Dim command1 As MySqlCommand
     Dim command2 As MySqlCommand
+    Protected Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim param As CreateParams = MyBase.CreateParams
+            param.ClassStyle = param.ClassStyle Or &H200
+            Return param
+        End Get
+    End Property
     Private Sub approver_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
 
@@ -51,7 +58,7 @@ Public Class approver
                 MessageBox.Show("Please choose Designation")
             ElseIf label13.Text = "Equipment Engineering" Then
                 connection = New MySqlConnection
-                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
                 Dim query As String
                 query = ("Insert into `auth_ee`(`approvers_id`) 
                                         VALUES ('" & Label12.Text & "')")
@@ -62,7 +69,7 @@ Public Class approver
                 connection.Close()
             ElseIf label13.Text = "Process Engineering" Then
                 connection = New MySqlConnection
-                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
                 Dim query As String
                 query = ("Insert into `auth_pe`(`approvers_id`) 
                                         VALUES ('" & Label12.Text & "')")
@@ -73,7 +80,7 @@ Public Class approver
                 connection.Close()
             ElseIf label13.Text = "Quality Assurance" Then
                 connection = New MySqlConnection
-                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
                 Dim query As String
                 query = ("Insert into `auth_qa`(`approvers_id`) 
                                         VALUES ('" & Label12.Text & "')")
@@ -84,7 +91,7 @@ Public Class approver
                 connection.Close()
             ElseIf label13.Text = "Production" Then
                 connection = New MySqlConnection
-                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
                 Dim query As String
                 query = ("Insert into `auth_prod`(`approvers_id`) 
                                         VALUES ('" & Label12.Text & "')")
@@ -95,7 +102,7 @@ Public Class approver
                 connection.Close()
             ElseIf label13.Text = "Other" Then
                 connection = New MySqlConnection
-                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
                 Dim query As String
                 query = ("Insert into `auth_others`(`approvers_id`) 
                                         VALUES ('" & Label12.Text & "')")
@@ -131,7 +138,7 @@ Public Class approver
             MessageBox.Show("please input password")
         ElseIf TextBox1.Text = TextBox2.Text Then
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
             Dim query As String

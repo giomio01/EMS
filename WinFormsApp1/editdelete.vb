@@ -7,14 +7,18 @@ Public Class editdelete
     Dim command2 As MySqlCommand
     Dim command3 As MySqlCommand
     Dim command4 As MySqlCommand
+    Protected Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim param As CreateParams = MyBase.CreateParams
+            param.ClassStyle = param.ClassStyle Or &H200
+            Return param
+        End Get
+    End Property
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
-
-
-
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
         Dim query As String
         query = ("select * from `emp_masterlist` where `EMP_NO` = '" & TextBox6.Text & "'")
         command = New MySqlCommand(query, connection)
@@ -23,10 +27,7 @@ Public Class editdelete
         Dim reader As MySqlDataReader
         connection.Open()
         reader = command.ExecuteReader()
-
         If reader.Read() Then
-
-
             TextBox7.Text = reader(1)
             TextBox2.Text = reader(2)
             TextBox3.Text = reader(3)
@@ -35,7 +36,21 @@ Public Class editdelete
             TextBox1.Text = reader.GetValue(6)
             TextBox8.Text = reader(7)
             ComboBox1.Text = reader(8)
+            connection.Close()
+            Dim query2 As String
+            query2 = ("select * from `approvers` where `EMP_NO` = '" & TextBox6.Text & "'")
+            command2 = New MySqlCommand(query2, connection)
+            Dim reader1 As MySqlDataReader
+            connection.Open()
+            reader1 = command2.ExecuteReader()
+            If reader1.Read() Then
+                TextBox9.Text = reader1.GetString(0)
+                Me.Refresh()
 
+            Else
+
+            End If
+            connection.Close()
 
             MessageBox.Show("employee succesfully loaded")
 
@@ -43,28 +58,7 @@ Public Class editdelete
             MessageBox.Show("Employee number does not exist")
 
         End If
-        connection.Close()
-        Dim query2 As String
-        query2 = ("select * from `approvers` where `EMP_NO` = '" & TextBox6.Text & "'")
-        command2 = New MySqlCommand(query2, connection)
 
-
-
-        command2 = New MySqlCommand(query2, connection)
-        Dim reader1 As MySqlDataReader
-        connection.Open()
-        reader1 = command2.ExecuteReader()
-
-        If reader1.Read() Then
-
-
-            TextBox9.Text = reader1.GetString(0)
-            Me.Refresh()
-
-        Else
-
-        End If
-        connection.Close()
 
 
     End Sub
@@ -97,8 +91,6 @@ Public Class editdelete
                 TextBox1.Enabled = False
                 MessageBox.Show("This Employee doesn't have an email if you wish to add an email address on this account DELETE this account first then ADD a new one to generate email ID or you can edit existing details only")
             End If
-
-
         Else
 
             TextBox7.Enabled = False
@@ -132,7 +124,7 @@ Public Class editdelete
             MessageBox.Show("please input employee's Productline")
         Else
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
             Dim query As String
             Dim query1 As String
@@ -172,11 +164,7 @@ Public Class editdelete
             TextBox8.Text = ""
             TextBox9.Text = ""
 
-
             command2 = New MySqlCommand(query1, connection)
-
-
-
             connection.Open()
             If command2.ExecuteNonQuery() = 1 Then
                 MessageBox.Show("email succesfully updated")
@@ -204,7 +192,7 @@ Public Class editdelete
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
         If TextBox6.Text = "" Then
             MessageBox.Show("please input employee number")
         ElseIf TextBox7.Text = "" Then
@@ -215,20 +203,13 @@ Public Class editdelete
             Dim query1 As String
             Dim query2 As String
 
-
-
-
             query = "delete from `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "'"
             query1 = "delete from `emails` WHERE `id` = (SELECT `email_id` FROM `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "')"
             query2 = "delete from `approvers` WHERE `emails_id` = (SELECT `email_id` FROM `emp_masterlist` WHERE `EMP_NO` = '" & TextBox6.Text & "')"
 
-
             command = New MySqlCommand(query, connection)
             command2 = New MySqlCommand(query1, connection)
             command3 = New MySqlCommand(query2, connection)
-
-
-
 
             connection.Open()
             Dim rslt As New System.Windows.Forms.DialogResult
@@ -270,7 +251,7 @@ Public Class editdelete
                 End If
 
                 If command3.ExecuteNonQuery() = 1 Then
-                    MessageBox.Show("Not an approver!")
+
                 End If
 
                 If command2.ExecuteNonQuery() = 1 Then
@@ -329,8 +310,6 @@ Public Class editdelete
 
 
     Private Sub TextBox6_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox6.KeyPress
-
-
 
         If Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
 

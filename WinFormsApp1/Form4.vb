@@ -4,10 +4,17 @@ Public Class Form4
     Dim connection As MySqlConnection
     Dim command As MySqlCommand
     Dim command1 As MySqlCommand
+    Protected Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim param As CreateParams = MyBase.CreateParams
+            param.ClassStyle = param.ClassStyle Or &H200
+            Return param
+        End Get
+    End Property
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
 
@@ -56,7 +63,7 @@ WHERE
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
         If ListBox1.SelectedItem = "" Then
             MessageBox.Show("please select data")
         Else
@@ -117,7 +124,7 @@ WHERE
 
 
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
 
@@ -158,7 +165,7 @@ WHERE
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
         Dim query As String
@@ -194,7 +201,7 @@ WHERE
                 TextBox2.Text = ""
 
                 connection = New MySqlConnection
-                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+                connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
 

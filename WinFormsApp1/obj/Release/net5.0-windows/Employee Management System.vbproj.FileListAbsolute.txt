@@ -14,7 +14,6 @@ C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\ZstdNet.dll
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\bin\Release\net5.0-windows\MySqlConnector.dll
-C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\Employee Management System.vbproj.AssemblyReference.cache
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\WinFormsApp1.add.resources
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\WinFormsApp1.approver.resources
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\WinFormsApp1.editdelete.resources
@@ -33,3 +32,4 @@ C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\ref\Employee Management System.dll
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\Employee Management System.pdb
 C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\Employee Management System.genruntimeconfig.cache
+C:\Users\abill\source\repos\WinFormsApp1\WinFormsApp1\obj\Release\net5.0-windows\Employee Management System.vbproj.CopyComplete

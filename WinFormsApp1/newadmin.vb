@@ -4,6 +4,13 @@
 Public Class newadmin
     Dim connection As MySqlConnection
     Dim command As MySqlCommand
+    Protected Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim param As CreateParams = MyBase.CreateParams
+            param.ClassStyle = param.ClassStyle Or &H200
+            Return param
+        End Get
+    End Property
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim rslt As New System.Windows.Forms.DialogResult
         rslt = MessageBox.Show("Are you sure you want to exit?", "WARNING!", MessageBoxButtons.YesNo)
@@ -23,7 +30,7 @@ Public Class newadmin
             MessageBox.Show("Please input Password")
         Else
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
             Dim reader As MySqlDataReader
             Try
 

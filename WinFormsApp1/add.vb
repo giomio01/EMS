@@ -10,6 +10,13 @@ Public Class add
     Dim command1 As MySqlCommand
     Dim command2 As MySqlCommand
     Dim command3 As MySqlCommand
+    Protected Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim param As CreateParams = MyBase.CreateParams
+            param.ClassStyle = param.ClassStyle Or &H200
+            Return param
+        End Get
+    End Property
 
 
 
@@ -42,7 +49,7 @@ Public Class add
             MessageBox.Show("please input employee's email")
         Else
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
             Dim query As String
             query = ("Insert into `emp_masterlist`(`EMP_NO` , `EMP_NAME` , `TEAM` , `DEPARTMENT` , `STATION` , `PRODUCT_LINE` , `emp_email` , `email_id` , `designation`) 
@@ -149,7 +156,7 @@ Public Class add
             MessageBox.Show("no designation inputed")
         Else
             connection = New MySqlConnection
-            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+            connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
 
 

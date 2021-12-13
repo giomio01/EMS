@@ -5,6 +5,13 @@ Imports MySql.Data.MySqlClient
 
 
 Public Class Form1
+    Protected Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim param As CreateParams = MyBase.CreateParams
+            param.ClassStyle = param.ClassStyle Or &H200
+            Return param
+        End Get
+    End Property
     Dim connection As MySqlConnection
     Dim command As MySqlCommand
 
@@ -13,7 +20,7 @@ Public Class Form1
 
 
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
         Dim reader As MySqlDataReader
 
 
@@ -70,7 +77,7 @@ Public Class Form1
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         connection = New MySqlConnection
-        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='giomio01';database='telford_db'")
+        connection.ConnectionString = ("server='localhost';port='3306';username='root';password='gieRHAAA9iSi3ULZ';database='telford_db'")
 
         Try
             connection.Open()
